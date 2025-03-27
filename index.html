@@ -1,26 +1,44 @@
-# name<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Name Origin</title>
+  <script>
+    function getNameOrigin() {
+      const name = document.getElementById('name').value;
+      let origin = '';
+
+      // Simple logic to determine the origin of the name
+      if (name.toLowerCase() === 'john') {
+        origin = 'The name John is of Hebrew origin, meaning "God is gracious".';
+      } else if (name.toLowerCase() === 'mary') {
+        origin = 'The name Mary is of Hebrew origin, meaning "bitter" or "beloved".';
+      } else {
+        origin = `The origin of the name ${name} is not available.`;
+      }
+
+      document.getElementById('origin').innerText = origin;
+    }
+  </script>
 </head>
 <body>
-
   <header>
     <h1>Welcome</h1>
   </header>
 
   <main>
-    <p>This is a basic HTML boilerplate.</p>
+    <h2>Find the Origin of Your Name</h2>
+    <label for="name">Enter your name: </label>
+    <input type="text" id="name" name="name">
+    <button onclick="getNameOrigin()">Submit</button>
+    <p id="origin"></p>
   </main>
 
   <footer>
     <p>&copy; 2025</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
